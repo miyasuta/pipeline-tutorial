@@ -1,0 +1,45 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Run tutorial-webapp",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/tutorial-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/sapcpwebapp/index.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/webapp",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/tutorial/webapp\"}"
+      },
+      "envFile": "${workspaceFolder}/webapp/.env1",
+      "preLaunchTask": "Build tutorial"
+    },
+    {
+      "name": "Run testsuite-tutorial-webapp",
+      "type": "node",
+      "request": "launch",
+      "program": "${workspaceFolder}/tutorial-approuter/node_modules/@sap/html5-repo-mock/index.js",
+      "args": [
+        "--standalone",
+        "/sapcpwebapp/test/testsuite.qunit.html",
+        "--ui5",
+        "{\"version\":\".\"}"
+      ],
+      "cwd": "${workspaceFolder}/webapp",
+      "env": {
+        "PORT": "6004",
+        "MOCK_LOOKUP_DIRS": "[\"webapp\"]",
+        "run.config": "{\"handlerId\":\"ui5_run_config_handler_id\",\"runnableId\":\"/home/user/projects/tutorial/webapp\"}"
+      },
+      "envFile": "${workspaceFolder}/webapp/.env2",
+      "preLaunchTask": "Build tutorial"
+    }
+  ]
+}
