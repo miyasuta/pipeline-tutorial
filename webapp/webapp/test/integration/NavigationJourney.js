@@ -14,8 +14,16 @@
 
 			// Assertions
 			Then.onTheAppPage.iShouldSeeTheApp();
+        });
+        
+		opaTest("Should able to press the button and see the result", function (Given, When, Then) {
+            // Actions
+            When.onTheAppPage.iPressTheButton();
+
+			// Assertions
+			Then.onTheAppPage.iShouldSeeTheMessage();
 
 			//Cleanup
 			Then.iTeardownMyApp();
-		});
+		});        
 	});
